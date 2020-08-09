@@ -26,6 +26,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var _index = 0; // 페이지 인덱스
+  var _pages = [
+    Page1(),
+    Page2(),
+    Page3(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -41,22 +46,17 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      body:Center(
-        child: Text(
-          '$_index 페이지',
-          style: TextStyle( fontSize: 40),
-        )
-      ),
+      body: _pages[_index],
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (index){
+        onTap: (index) {
           setState(() {
             _index = index;
           });
         },
         currentIndex: _index,
-        items:<BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            title:Text('홈'),
+            title: Text('홈'),
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
@@ -64,12 +64,48 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.assignment),
           ),
           BottomNavigationBarItem(
-            title:Text('내 정보'),
+            title: Text('내 정보'),
             icon: Icon(Icons.account_circle),
           ),
         ],
       ),
 
+    );
+  }
+}
+
+class Page1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Text(
+          '홈 페이지',
+          style: TextStyle(fontSize: 40),
+        )
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Text(
+          '페이지2',
+          style: TextStyle(fontSize: 40),
+        )
+    );
+  }
+}
+
+class Page3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Text(
+          '페이지3',
+          style: TextStyle(fontSize: 40),
+        )
     );
   }
 }
