@@ -201,7 +201,17 @@ class Page1 extends StatelessWidget {
   }
 
   _buildBottom() {
-    return Text('Bottom');
+    final itmes = List.generate(10, (i) {
+      return ListTile(
+        leading: Icon(Icons.notifications_none),
+        title: Text('[이벤트] 이것은 공지사항입니다 $i'),
+      );
+    });
+    return ListView(
+      physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      children: itmes,
+    );
   }
 }
 
