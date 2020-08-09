@@ -32,10 +32,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text('복잡한 UI'
-,style:TextStyle(color:Colors.black)
-        ),
+        title: Text('복잡한 UI', style: TextStyle(color: Colors.black)),
         centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.more_vert, color: Colors.black),
+            onPressed: () {},
+          )
+        ],
       ),
       body:Center(
         child: Text(
