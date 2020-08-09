@@ -1,4 +1,14 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+final dummyItems = [
+  'https://www.e-mirim.hs.kr/upload/board/1594343071091.JPG',
+  'https://www.e-mirim.hs.kr/upload/board/1594343071094.JPG',
+  'https://www.e-mirim.hs.kr/upload/board/1594343071098.JPG',
+  'https://www.e-mirim.hs.kr/upload/board/1594343071100.JPG',
+  'https://www.e-mirim.hs.kr/upload/board/1594343071104.JPG',
+];
 
 void main() {
   runApp(MyApp());
@@ -74,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
 class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: <Widget>[
         _buildTop(),
         _buildMiddle(),
@@ -168,7 +178,26 @@ class Page1 extends StatelessWidget {
   }
 
   _buildMiddle() {
-    return Text('Middle');
+    return CarouselSlider(
+      options: CarouselOptions(
+        height: 200.0,
+        autoPlay: true,
+      ),
+      items: dummyItems.map((url) {
+        return Builder(
+          builder: (BuildContext context) {
+            return Container(
+                width: MediaQuery.of(context).size.width,
+                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                decoration: BoxDecoration(color: Colors.black12),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.network(url, fit: BoxFit.cover),
+                ));
+          },
+        );
+      }).toList(),
+    );
   }
 
   _buildBottom() {
