@@ -60,16 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            title:Text('이용서비스'),
-            icon: Icon(Icons.assignment),
-          ),
+              title: Text('이용서비스'), icon: Icon(Icons.assignment)),
           BottomNavigationBarItem(
             title: Text('내 정보'),
             icon: Icon(Icons.account_circle),
           ),
         ],
       ),
-
     );
   }
 }
@@ -79,10 +76,9 @@ class Page1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Text(
-          '홈 페이지',
-          style: TextStyle(fontSize: 40),
-        )
-    );
+      '홈 페이지',
+      style: TextStyle(fontSize: 40),
+    ));
   }
 }
 
@@ -93,8 +89,7 @@ class Page2 extends StatelessWidget {
         child: Text(
           '페이지2',
           style: TextStyle(fontSize: 40),
-        )
-    );
+        ));
   }
 }
 
@@ -105,7 +100,6 @@ class Page3 extends StatelessWidget {
         child: Text(
           '페이지3',
           style: TextStyle(fontSize: 40),
-        )
-    );
+        ));
   }
 }
