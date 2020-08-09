@@ -84,7 +84,87 @@ class Page1 extends StatelessWidget {
   }
 
   _buildTop() {
-    return Text('Top');
+    return Padding(
+      padding: const EdgeInsets.only(top: 20, bottom: 20),
+      child: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              GestureDetector(
+                onTap: () {
+                  print('첫번째 행의 첫번째 아이콘 클릭!');
+                },
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40),
+                    Text('기본 택시'),
+                  ],
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  print('첫번째 행의 두번째 아이콘 클릭');
+                },
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40),
+                    Text('전기 택시'),
+                  ],
+                ),
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(Icons.local_taxi, size: 40),
+                  Text('시외 택시'),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(Icons.local_taxi, size: 40),
+                  Text('모범 택시'),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Icon(Icons.local_taxi, size: 40),
+                  Text('기본 택시'),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(Icons.local_taxi, size: 40),
+                  Text('전기 택시'),
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  Icon(Icons.local_taxi, size: 40),
+                  Text('시외 택시'),
+                ],
+              ),
+              Opacity(
+                opacity: 0.0,
+                child: Column(
+                  children: <Widget>[
+                    Icon(Icons.local_taxi, size: 40),
+                    Text('모범 택시'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 
   _buildMiddle() {
